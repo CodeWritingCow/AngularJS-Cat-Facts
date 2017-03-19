@@ -9,8 +9,32 @@
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+	<style>
+    .mdl-navigation__link:hover {
+    	background-color: rgb(255,64,129);
+    }		
+	</style>
 </head>
 <body>
+
+	<!-- Uses a header that scrolls with the text, rather than staying locked at the top -->
+	<header class="mdl-layout__header mdl-layout__header--scroll">
+		<div class="mdl-layout__header-row">
+	      <!-- Title -->
+	      <span class="mdl-layout-title">〈 CodeWritingCow / 〉</span>
+	      <!-- Add spacer, to align navigation to the right -->
+	      <div class="mdl-layout-spacer"></div>
+	      <!-- Navigation -->
+	      <nav class="mdl-navigation">
+	        <a class="mdl-navigation__link" href="http://www.codewritingcow.com">Home</a>
+	        <a class="mdl-navigation__link" href="https://github.com/CodeWritingCow">GitHub</a>
+	        <a class="mdl-navigation__link" href="https://www.linkedin.com/pub/gary-pang/41/938/681">LinkedIn</a>
+	        <a class="mdl-navigation__link" href="http://codewritingcow.com/projects/">My Projects</a>
+	      </nav>
+	    </div>
+	  </header>
+
 	<div ng-app="myApp" ng-controller="myCtrl" class="mdl-grid">
 
 		<div class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
@@ -27,17 +51,14 @@
 		<div class="mdl-cell mdl-cell--4-col">
 			<h1>Cat Fact</h1>
 			<p style="font-size: 1.25em;">{{ randomFact(catFacts) }}</p>
-
-			<br>
-			<br>
 			<br>
 			
 			<!-- Accent-colored raised button with ripple -->
-			<button ng-click="randomPhoto()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Tell Me More</button>
+			<button ng-click="randomPhoto()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Tell Me More!</button>
+			<br>
+			<br>
+			<br>
 
-			<br>
-			<br>
-			<br>
 			<p>Source: <a href="https://github.com/vadimdemedes/cat-facts">https://github.com/vadimdemedes/cat-facts</a></p>
 		</div>
 	</div>
@@ -54,16 +75,9 @@
 				};
 
 				$scope.randomPhoto = function() {
-					//alert("MEOW!");
 					$scope.catPhoto = "http://thecatapi.com/api/images/get";
 					$scope.catPhoto += '?decache=' + Math.random();
 				};
-
-				/*$scope.pressButton = function() {
-					$scope.randomFact();
-					//alert("MEOW!");
-					$scope.randomPhoto();
-				};*/
 
 				$scope.catPhoto = "http://thecatapi.com/api/images/get";
 			});
