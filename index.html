@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Facts</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>Cat Factoids</h1>
+		<ul>
+			<li ng-repeat="fact in catFacts">
+				{{ fact.details }}
+			</li>
+		</ul>
+		<p>Source: <a href="http://www.catfact.info">http://www.catfact.info</a></p>
+	</div>
+
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', []);
+			myApp.controller('myCtrl', function($scope, $http){
+				$http.get('http://www.catfact.info/api/v1/facts.json?page=:page&per_page=50:per_page').then(function(response) {
+					$scope.catFacts = response.data.facts;
+				});
+			});
+	</script>
+</body>
+</html>
