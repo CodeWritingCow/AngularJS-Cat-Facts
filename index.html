@@ -2,17 +2,40 @@
 <html>
 <head>
 	<title>Cat Facts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 </head>
 <body>
-	<div ng-app="myApp" ng-controller="myCtrl">
-		<a href="http://thecatapi.com"><img ng-src="{{catPhoto}}"></a>
-		<h1>Cat Factoid</h1>
-		<p>{{ randomFact(catFacts) }}</p>
-		<p>{{ catPhoto }}</p>
-		<button ng-click="randomPhoto()">Tell Me More</button>
+	<div ng-app="myApp" ng-controller="myCtrl" class="mdl-grid">
 
-		<p>Source: <a href="https://github.com/vadimdemedes/cat-facts">https://github.com/vadimdemedes/cat-facts</a></p>
+		<div class="mdl-cell mdl-cell--6-col">
+			<img ng-src="{{catPhoto}}" style="width: 100%;">
+		</div>
+
+		<div class="mdl-cell mdl-cell--2-col"></div>
+		
+		<div class="mdl-cell mdl-cell--4-col">
+			<h1>Cat Fact</h1>
+			<p>{{ randomFact(catFacts) }}</p>
+			<!--<p>{{ catPhoto }}</p>-->
+
+			<br>
+			<br>
+			<br>
+			
+			<!-- Accent-colored raised button with ripple -->
+			<button ng-click="randomPhoto()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Tell Me More</button>
+
+			<br>
+			<br>
+			<br>
+			<p>Source: <a href="https://github.com/vadimdemedes/cat-facts">https://github.com/vadimdemedes/cat-facts</a></p>
+		</div>
 	</div>
 
 	<script type="text/javascript">
