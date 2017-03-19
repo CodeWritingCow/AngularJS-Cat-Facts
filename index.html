@@ -16,9 +16,12 @@
     }		
 	</style>
 </head>
+
 <body>
 
 	<!-- Uses a header that scrolls with the text, rather than staying locked at the top -->
+	<div ng-app="myApp" ng-controller="myCtrl" class="mdl-layout mdl-js-layout">
+
 	<header class="mdl-layout__header mdl-layout__header--scroll">
 		<div class="mdl-layout__header-row">
 	      <!-- Title -->
@@ -26,16 +29,15 @@
 	      <!-- Add spacer, to align navigation to the right -->
 	      <div class="mdl-layout-spacer"></div>
 	      <!-- Navigation -->
-	      <nav class="mdl-navigation">
-	        <a class="mdl-navigation__link" href="http://www.codewritingcow.com">Home</a>
-	        <a class="mdl-navigation__link" href="https://github.com/CodeWritingCow">GitHub</a>
-	        <a class="mdl-navigation__link" href="https://www.linkedin.com/pub/gary-pang/41/938/681">LinkedIn</a>
-	        <a class="mdl-navigation__link" href="http://codewritingcow.com/projects/">My Projects</a>
-	      </nav>
+	      <div ng-include="'navMenu.htm'"></div>
 	    </div>
 	  </header>
+	<div class="mdl-layout__drawer">
+    	<span class="mdl-layout-title">CodeWritingCow</span>
+    	<div ng-include="'navMenu.htm'"></div>
+	</div>	  
 
-	<div ng-app="myApp" ng-controller="myCtrl" class="mdl-grid">
+	<div class="mdl-grid">
 
 		<div class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
 			<div class="mdl-card__media">
@@ -62,7 +64,7 @@
 			<p>Source: <a href="https://github.com/vadimdemedes/cat-facts">https://github.com/vadimdemedes/cat-facts</a></p>
 		</div>
 	</div>
-
+</div>
 	<script type="text/javascript">
 		var myApp = angular.module('myApp', []);
 			myApp.controller('myCtrl', function($scope, $http){
