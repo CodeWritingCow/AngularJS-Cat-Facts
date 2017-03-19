@@ -1,4 +1,4 @@
-#Cat Factoids
+# Cat Factoids
 _By Gary Pang_
 
 This webpage will generate a random cat factoid and photo everytime someone pays a visit.

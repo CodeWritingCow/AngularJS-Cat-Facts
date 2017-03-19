@@ -6,10 +6,11 @@
 </head>
 <body>
 	<div ng-app="myApp" ng-controller="myCtrl">
-		<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src"></a>
+		<a href="http://thecatapi.com"><img ng-src="{{catPhoto}}"></a>
 		<h1>Cat Factoid</h1>
 		<p>{{ randomFact(catFacts) }}</p>
-		<button ng-click="randomFact()">Tell Me More</button>
+		<p>{{ catPhoto }}</p>
+		<button ng-click="randomPhoto()">Tell Me More</button>
 
 		<p>Source: <a href="https://github.com/vadimdemedes/cat-facts">https://github.com/vadimdemedes/cat-facts</a></p>
 	</div>
@@ -24,6 +25,20 @@
 				$scope.randomFact = function(items) {
 					return items[Math.floor(Math.random()*items.length)];
 				};
+
+				$scope.randomPhoto = function() {
+					//alert("MEOW!");
+					$scope.catPhoto = "http://thecatapi.com/api/images/get";
+					$scope.catPhoto += '?decache=' + Math.random();
+				};
+
+				/*$scope.pressButton = function() {
+					$scope.randomFact();
+					//alert("MEOW!");
+					$scope.randomPhoto();
+				};*/
+
+				$scope.catPhoto = "http://thecatapi.com/api/images/get";
 			});
 	</script>
 </body>
