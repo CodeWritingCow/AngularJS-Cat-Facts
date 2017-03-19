@@ -6,9 +6,11 @@
 </head>
 <body>
 	<div ng-app="myApp" ng-controller="myCtrl">
-		<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
-		<h1>Cat Factoids</h1>
+		<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src"></a>
+		<h1>Cat Factoid</h1>
 		<p>{{ randomFact(catFacts) }}</p>
+		<button ng-click="randomFact()">Tell Me More</button>
+
 		<p>Source: <a href="https://github.com/vadimdemedes/cat-facts">https://github.com/vadimdemedes/cat-facts</a></p>
 	</div>
 
