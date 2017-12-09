@@ -1,16 +1,16 @@
-var myApp = angular.module('myApp', []);
-	myApp.controller('myCtrl', function($scope, $http){
-		$http.get('cat-facts.json').then(function(response) {
+const catFacts = 'cat-facts.json';
+
+const myApp = angular.module('myApp', []);
+	myApp.controller('myCtrl', ($scope, $http) => {
+		$http.get(catFacts).then((response) => {
 			$scope.catFacts = response.data;
 		});
 
-		$scope.randomFact = function(items) {
-			return items[Math.floor(Math.random()*items.length)];
-		};
+		$scope.randomFact = (items) => items[Math.floor(Math.random()*items.length)];
 
-		$scope.randomPhoto = function() {
+		$scope.randomPhoto = () => {
 			$scope.catPhoto = "http://thecatapi.com/api/images/get";
-			$scope.catPhoto += '?decache=' + Math.random();
+			$scope.catPhoto += `${'?decache='} ${Math.random()}`;
 		};
 
 		$scope.catPhoto = "http://thecatapi.com/api/images/get";
