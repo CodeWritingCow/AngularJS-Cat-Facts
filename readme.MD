@@ -1,10 +1,18 @@
-# Cat Factoids
-_By Gary Pang_
+![My image](screenshot.gif)
 
-![My image](cat-fact-screenshot.jpg)
+# Random Cat Photo Generator
+This repository contains the source for an [AngularJS single-page application](http://www.codewritingcow.com/projects/cat-facts-5000/) that generates a random cat photo (and factoid) when the "NEXT" button gets clicked. MEOW! 🐈
 
-This webpage will generate a random cat factoid and photo everytime someone pays a visit.
+## Requirements
 
-Cat factoid source: https://github.com/vadimdemedes/cat-facts
+#### Key Dependencies
+- [AngularJS](https://angularjs.org/) web framework
+- [Material Design Lite](https://getmdl.io/) front-end library
+- [Material Icons](https://fonts.googleapis.com/icon?family=Material+Icons) style sheet
 
-Cat photo source: http://thecatapi.com
+## Author
+**Gary Pang** - [codewritingcow.com](http://codewritingcow.com)
+
+## References
+- [Interesting cat facts](https://github.com/vadimdemedes/cat-facts)
+- [TheCatAPI](http://thecatapi.com)
