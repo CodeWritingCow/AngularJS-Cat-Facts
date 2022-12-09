@@ -1,7 +1,7 @@
 ![My image](screenshot.gif)
 
 # Random Cat Photo Generator
-This repository contains the source for an [AngularJS single-page application](http://www.codewritingcow.com/projects/cat-facts-5000/) that generates a random cat photo (and factoid) when the "NEXT" button gets clicked. MEOW! 🐈
+This repository contains the source for an [AngularJS single-page application](https://garypang.dev/AngularJS-Cat-Facts/) that generates a random cat photo (and factoid) when the "NEXT" button gets clicked. MEOW! 🐈
 
 ## Requirements
 
@@ -11,7 +11,7 @@ This repository contains the source for an [AngularJS single-page application](h
 - [Material Icons](https://fonts.googleapis.com/icon?family=Material+Icons) style sheet
 
 ## Author
-**Gary Pang** - [codewritingcow.com](http://codewritingcow.com)
+**Gary Pang** - [garypang.dev](https://garypang.dev)
 
 ## References
 - [Interesting cat facts](https://github.com/vadimdemedes/cat-facts)
